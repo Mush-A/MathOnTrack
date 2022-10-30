@@ -16,10 +16,10 @@ export default function Courses(props: any) {
         <GeneralContainer>
             <PageIntro
                 title="Courses"
-                image='https://www.kaggle.com/static/images/education/km/learn-home-208h.png'
+                image='/assets/front.gif'
             >
-                <p>Choose from an array of premium to free courses.</p>
-                <p>We have free courses to support you to agnostic to whether or not you have bought a premium course.</p>
+                <p>Start from the beginning or choose where to start!</p>
+                <p>MathOnTrack teaches you the fundamentals of Mathematics and beyond.</p>
             </PageIntro>
         </GeneralContainer>
         <GeneralContainer>

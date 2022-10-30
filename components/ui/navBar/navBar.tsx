@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 // Next Imports
 import Link from 'next/link';
@@ -47,7 +47,9 @@ export default function NavBar(props: NavBarProps): JSX.Element {
           // onClick={handleMenu}
           color="inherit"
         >
-          <AccountCircle />
+          <a href="https://github.com/Mush-A/MathOnTrack" target="blank" >
+            <GitHubIcon />
+          </a>
         </IconButton>
       </div>
     </Toolbar>

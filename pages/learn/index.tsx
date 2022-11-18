@@ -4,8 +4,15 @@ import Grid from "@mui/material/Grid";
 
 import GeneralContainer from "../../components/ui/generalContainer/generalContainer";
 import PageIntro from "../../components/ui/pageIntro/pageIntro";
+import CourseCard from "../../components/ui/courseCard/courseCard";
 
-export default function Courses(props: any) {
+import { getCourses, CourseFileContent } from "../../lib/getCourses";
+
+interface Courses {
+    courseFileContents: CourseFileContent[]
+}
+
+export default function Courses(props: Courses) {
 
     return <>
         <Head>
@@ -24,25 +31,31 @@ export default function Courses(props: any) {
         </GeneralContainer>
         <GeneralContainer>
             <Grid container spacing={4} columns={{ xs: 4, md: 12 }}>
-                {/* {
-                    props.courses.map(course => {
-                        return <Grid item key={course.title} xs={4} md={4}>
-                            <CourseCard title={course.title} board={course.board} link={`/courses/${course.id}`} />
-                        </Grid>
+                {
+                    props.courseFileContents.map(courseFileContent => {
+                        return (
+                            <Grid item key={courseFileContent.course_id} xs={4} md={4}>
+                                <CourseCard
+                                    title={courseFileContent.course_title} 
+                                    description={courseFileContent.course_description} 
+                                    link={""} 
+                                />
+                            </Grid>
+                        )
                     })
-                } */}
+                }
             </Grid>
         </GeneralContainer>
     </>
 }
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
-//     // const courses = getCoursesMetaData();
+    const courseFileContents = getCourses('en');
 
-//     return {
-//         props: {
-//             courses,
-//         },
-//     };
-// }
+    return {
+        props: {
+            courseFileContents
+        },
+    };
+}

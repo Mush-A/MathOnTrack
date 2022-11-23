@@ -23,7 +23,7 @@ export default function Courses(props: Courses) {
         <GeneralContainer>
             <PageIntro
                 title="Courses"
-                image='/assets/front.gif'
+                image='/assets/graph.svg'
             >
                 <p>Start from the beginning or choose where to start!</p>
                 <p>MathOnTrack teaches you the fundamentals of Mathematics and beyond.</p>

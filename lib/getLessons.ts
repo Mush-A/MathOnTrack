@@ -14,11 +14,9 @@ export function getLessons(language: string, course_id: string) {
 
     const lessonFilesNameArray = fs.readdirSync(courseDirectory);
 
-    const lessonFileContents = lessonFilesNameArray.map(lessonFileName => {
-
-        if (lessonFileName === "course-intro.mdx") {
-            return;
-        }
+    const lessonFileContents = lessonFilesNameArray
+    .filter(lessonFileName => lessonFileName !== "course-intro.mdx")
+    .map(lessonFileName => {
 
         const lessonFilePath = path.join(courseDirectory, lessonFileName);
 

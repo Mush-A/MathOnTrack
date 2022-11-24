@@ -38,7 +38,7 @@ export default function Courses(props: Courses) {
                                 <CourseCard
                                     title={courseFileContent.course_title} 
                                     description={courseFileContent.course_description} 
-                                    link={""} 
+                                    link={`/learn/${courseFileContent.course_id}/lessons`} 
                                 />
                             </Grid>
                         )

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GetStaticProps } from 'next'
 
 import Grid from "@mui/material/Grid";
 
@@ -49,7 +50,7 @@ export default function Courses(props: Courses) {
     </>
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
 
     const courseFileContents = getCourses('en');
 

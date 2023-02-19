@@ -42,6 +42,7 @@ export function getLesson(language: string, course_id: string, lesson_id: string
 
         } 
     })
+    .filter(object => object !== undefined)
 
     return lessonFileContent[0];
 }

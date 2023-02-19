@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from 'next';
 
 import { getCourses } from "../../../../lib/getCourses";
-import { getLessons, LessonFileContent } from "../../../../lib/getLessons";
+import { getLessons } from "../../../../lib/getLessons";
 import { getLesson, LessonFileContentWithJSX } from "../../../../lib/getLesson";
 
 import { serialize } from 'next-mdx-remote/serialize';
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const course_id = context.params?.course as string;
     const lesson_id = context.params?.lesson as string;
 
-    const lessonFileContent = getLesson('en', course_id, lesson_id);
+    let lessonFileContent = getLesson('en', course_id, lesson_id);
 
     const contentJSXComplied = await serialize(
         lessonFileContent?.contentJSX as string, 

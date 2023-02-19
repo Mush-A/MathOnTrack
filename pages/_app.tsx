@@ -7,6 +7,7 @@ import NextBreadcrumbs from '../components/ui/nextBreadcrumbs/nextBreadcrumbs';
 const navLinks = [
   {name: 'Home', link: '/'},
   {name: 'Learn', link: '/learn'},
+  {name: 'Create', link: '/Create'}
 ]
 
 export default function App({ Component, pageProps }: AppProps) {

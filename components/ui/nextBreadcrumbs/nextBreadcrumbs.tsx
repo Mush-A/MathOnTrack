@@ -6,9 +6,6 @@ import Typography from '@mui/material/Typography';
 // NEXT Imports
 import { useRouter } from 'next/router';
 
-// Components Imports
-import GeneralContainer from '../generalContainer/generalContainer';
-
 export interface NextBreadcrumbsProps {
   mapTo: {
     from: string,
@@ -28,7 +25,6 @@ export default function NextBreadcrumbs(props: NextBreadcrumbsProps) {
     }
 
     return (
-      <GeneralContainer>
         <Breadcrumbs separator="›" aria-label="breadcrumb">
           {
             router.asPath
@@ -39,26 +35,22 @@ export default function NextBreadcrumbs(props: NextBreadcrumbsProps) {
                 const newPath = props.mapTo.to.replace(new RegExp(escapeStringIfBracketsExist(router.route.split('/')[index]), 'g'), path);
                 const text = path;
                 const link = array.slice(0, index).join('/') + "/" + newPath;
-                const last = index + 1 == array.length;
-                return <Crumb text={text} link={link} last={last} key={text} />
+                return <Crumb text={text} link={link} key={text} />
               }
               if (path !== 'lessons') {
                 const text = path;
                 const link = array.slice(0, index + 1).join('/');
-                const last = index + 1 == array.length;
-                return <Crumb text={text} link={link} last={last} key={text} />
+                return <Crumb text={text} link={link} key={text} />
               }
             })
           }
         </Breadcrumbs>
-      </GeneralContainer>
     );
 }
 
 interface CrumbProps {
   text: string,
-  link: string,
-  last: boolean
+  link: string
 }
 
 function Crumb(props: CrumbProps) {
@@ -67,12 +59,6 @@ function Crumb(props: CrumbProps) {
     return word
       .toLowerCase()
       .replace(/\w/, (firstLetter: string) => firstLetter.toUpperCase());
-  }
-
-  if (props.last) {
-    return <Typography color="text.primary">
-      {capitalize(props.text)}
-    </Typography>
   }
 
   return (

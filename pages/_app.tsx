@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return(
     <Layout>
       <NavBar pages={navLinks} />
-      <NextBreadcrumbs mapTo={{ from: '[course]', to: '[course]/lessons' }} />
       <Component {...pageProps} />
     </Layout>
   )

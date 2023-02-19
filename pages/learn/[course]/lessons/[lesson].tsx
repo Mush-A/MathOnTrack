@@ -11,6 +11,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 import GeneralContainer from "../../../../components/ui/generalContainer/generalContainer";
+import NextBreadcrumbs from "../../../../components/ui/nextBreadcrumbs/nextBreadcrumbs";
 
 import Typography from "@mui/material/Typography";
 
@@ -38,6 +39,9 @@ export default function Lesson(props: Lesson) {
                 crossOrigin="anonymous"
             />
         </Head>
+        <GeneralContainer>
+            <NextBreadcrumbs mapTo={{ from: '[course]', to: '[course]/lessons' }} />
+        </GeneralContainer>
         <GeneralContainer>
             <MDXRemote {...props.contentJSXComplied} components={components} />
         </GeneralContainer>

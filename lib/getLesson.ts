@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark'
-import remarkMdx from 'remark-mdx'
 
 export interface LessonFileContentWithJSX {
     lesson_id: string
@@ -27,11 +25,7 @@ export function getLesson(language: string, course_id: string, lesson_id: string
 
         const matterResult = matter(lessonFileContent);
 
-        const processedContent = remark()
-        .use(remarkMdx)
-        .processSync(matterResult.content)
-      
-        const contentJSX = processedContent.toString();
+        const contentJSX = matterResult.content;
 
         if (matterResult.data.lesson_id === lesson_id) {
 

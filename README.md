@@ -29,4 +29,5 @@ Contributors are welcome!
 - [ ] Add Video component
 - [ ] Add MCQ component
 - [ ] Add Google Authentication and save progress on google drive
+- [ ] Add other language support
 - [ ] Add a "create" page. Mathematics contributors should be able to use it to create MDX pages with this and write math. The suggessions in the monaco editor should suggest the available ready made JSX components. Users should be able to preview it, export it and push it to github.

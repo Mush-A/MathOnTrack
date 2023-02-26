@@ -9,6 +9,8 @@ import CourseCard from "../../components/ui/courseCard/courseCard";
 
 import { getCourses, CourseFileContent } from "../../lib/getCourses";
 
+import NextBreadcrumbs from '../../components/ui/nextBreadcrumbs/nextBreadcrumbs';
+
 interface Courses {
     courseFileContents: CourseFileContent[]
 }
@@ -22,6 +24,7 @@ export default function Courses(props: Courses) {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <GeneralContainer>
+            <NextBreadcrumbs mapTo={{ from: '[course]', to: '[course]/lessons' }} />
             <PageIntro
                 title="Courses"
                 image='/assets/graph.svg'

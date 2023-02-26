@@ -29,7 +29,7 @@ export default function NavBar(props: NavBarProps): JSX.Element {
         <MenuIcon />
       </IconButton>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        MathOnTrack
+        MathOnTrack.org
       </Typography>
       <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
         {props.pages.map((page) => (

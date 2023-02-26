@@ -11,30 +11,36 @@ export interface PageIntroProps {
 
 export default function PageIntro(props: PageIntroProps) {
 
-    return <Grid container spacing={4} sx={{ display: 'flex', justifyContent: 'space-between' }} columns={{ xs: 4, md: 12 }} >
+  function capitalize(word: string): string {
+    return word
+      .toLowerCase()
+      .replace(/\w/, (firstLetter: string) => firstLetter.toUpperCase());
+  }
 
-        <Grid item xs={4} md={6}>
-          <Box>
-            <Typography variant="h3" component="div" gutterBottom>
-              { props.title }
-            </Typography>
+  return <Grid container spacing={4} sx={{ display: 'flex', justifyContent: 'space-between' }} columns={{ xs: 4, md: 12 }} >
 
-            <Box color={theme => theme.palette.text.secondary}>
-                <Typography variant="body1" component="div" gutterBottom marginBottom={2}>
-                    {props.children}
-                </Typography>
-            </Box>
+      <Grid item xs={4} md={6}>
+        <Box>
+          <Typography variant="h3" component="div" gutterBottom>
+            { capitalize(props.title) }
+          </Typography>
+
+          <Box color={theme => theme.palette.text.secondary}>
+              <Typography variant="body1" component="div" gutterBottom marginBottom={2}>
+                  {props.children}
+              </Typography>
           </Box>
-        </Grid>
-
-        <Grid item xs={4} md={6} sx={{ display: 'flex', justifyContent: {xs: 'center', md: 'flex-end'}}} >
-          <Box 
-            component={'img'}
-            src={ props.image }
-            sx={{ maxHeight: '200px' }}
-          />
-        </Grid>
-
+        </Box>
       </Grid>
+
+      <Grid item xs={4} md={6} sx={{ display: 'flex', justifyContent: {xs: 'center', md: 'flex-end'}}} >
+        <Box 
+          component={'img'}
+          src={ props.image }
+          sx={{ maxHeight: '200px' }}
+        />
+      </Grid>
+
+    </Grid>
 }
   

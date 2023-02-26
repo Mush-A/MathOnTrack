@@ -64,11 +64,11 @@ function Crumb(props: CrumbProps) {
       .replace(/\w/, (firstLetter: string) => firstLetter.toUpperCase());
   }
 
-  if (props.last) {
-    return <Typography color="text.primary">
-      {capitalize(props.text)}
-    </Typography>
-  }
+  // if (props.last) {
+  //   return <Typography color="text.primary">
+  //     {capitalize(props.text)}
+  //   </Typography>
+  // }
 
   return (
     <Link underline="hover" color="inherit" href={props.link}>

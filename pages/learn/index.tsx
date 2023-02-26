@@ -25,6 +25,8 @@ export default function Courses(props: Courses) {
         </Head>
         <GeneralContainer>
             <NextBreadcrumbs mapTo={{ from: '[course]', to: '[course]/lessons' }} />
+        </GeneralContainer>
+        <GeneralContainer>
             <PageIntro
                 title="Courses"
                 image='/assets/graph.svg'

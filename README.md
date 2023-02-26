@@ -25,6 +25,7 @@ Contributors are welcome!
 - [x] Add next-mdx-remote and parse the MDX file content
 - [x] Add Breadcrumbs
 - [x] Add Katex support for writing beatiful mathematics using rehype and remark plugins
+- [ ] Add Pagination component
 - [ ] Add Video component
 - [ ] Add MCQ component
 - [ ] Add Google Authentication and save progress on google drive
